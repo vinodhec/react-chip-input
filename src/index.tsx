@@ -16,6 +16,7 @@ export type Props = {
   chips: string[];
   /**Extra classes */
   classes: string;
+  placeholder: string;
   /**Emits value */
   onSubmit: Function;
 };
@@ -106,7 +107,7 @@ export default class ReactChipInput extends React.Component<Props> {
               <FormControl
                 ref={this.formControlRef}
                 name="chipInput"
-                placeholder="Enter Here..."
+                placeholder={this.props.placeholder}
                 aria-label="Chip Input"
                 className={['m-0', 'border-0', styles['no-focus'], 'mb-0'].join(
                   ' '
