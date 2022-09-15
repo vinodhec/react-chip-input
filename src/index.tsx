@@ -108,6 +108,7 @@ export default class ReactChipInput extends React.Component<Props> {
               <FormControl
                 ref={this.formControlRef}
                 name="chipInput"
+                {...this.props}
                 disabled={this.props.disabled}
                 placeholder={this.props.placeholder}
                 aria-label="Chip Input"
