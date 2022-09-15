@@ -109,14 +109,13 @@ export default class ReactChipInput extends React.Component<Props> {
               <FormControl
                 ref={this.formControlRef}
                 name="chipInput"
-                onFocus={}
                 disabled={this.props.disabled}
                 placeholder={this.props.placeholder}
                 aria-label="Chip Input"
                 className={['m-0', 'border-0', styles['no-focus'], 'mb-0'].join(
                   ' '
                 )}
-                onFocus={() => (this.setState({ focused: true });this.props.onFocus();)}
+                onFocus={() => {this.setState({ focused: true });this.props.onFocus();}}
                 onBlur={() => this.setState({ focused: false })}
               />
             </Form>
