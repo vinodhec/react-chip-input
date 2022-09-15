@@ -21,7 +21,7 @@ export default class ReactChipInput extends React.Component<any> {
      * This index will help us to remove the chip actually after the same. */
     exitingIndex: -1
   };
-  constructor(props: Readonly<Props>) {
+  constructor(props: Readonly<any>) {
     super(props);
     this.formControlRef = React.createRef();
   }
