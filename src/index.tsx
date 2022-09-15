@@ -9,20 +9,8 @@ import { ReactComponent as CloseIcon } from './baseline-close-24px.svg';
 import styles from './styles.css';
 
 /**Type of Input-Props */
-export type Props = {
-  /**Emits index */
-  onRemove: Function;
-  /**Array of chips */
-  chips: string[];
-  /**Extra classes */
-  classes: string;
-  placeholder: string;
-disabled:boolean;
-  /**Emits value */
-  onSubmit: Function;
-};
 
-export default class ReactChipInput extends React.Component<Props> {
+export default class ReactChipInput extends React.Component<any> {
   /**Ref object for input */
   formControlRef: any;
   /**State of the component */
