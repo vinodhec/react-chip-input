@@ -46,7 +46,7 @@ export default class ReactChipInput extends React.Component<any> {
     this.formControlRef.current.focus();
   };
   /**This is needed, as chips array will get changed frequently. */
-  componentDidUpdate(prevProps: Readonly<Props>) {
+  componentDidUpdate(prevProps: Readonly<any>) {
     if (prevProps.chips.length !== this.props.chips.length) {
       this.formControlRef.current.value = '';
     }
