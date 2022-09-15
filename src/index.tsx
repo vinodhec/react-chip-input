@@ -9,8 +9,21 @@ import { ReactComponent as CloseIcon } from './baseline-close-24px.svg';
 import styles from './styles.css';
 
 /**Type of Input-Props */
+export type Props = {
+  /**Emits index */
+  onRemove: Function;
+  /**Array of chips */
+  chips: string[];
+  /**Extra classes */
+  classes: string;
+onFocus:Function;
+  placeholder: string;
+disabled:boolean;
+  /**Emits value */
+  onSubmit: Function;
+};
 
-export default class ReactChipInput extends React.Component<any> {
+export default class ReactChipInput extends React.Component<Props> {
   /**Ref object for input */
   formControlRef: any;
   /**State of the component */
@@ -21,7 +34,7 @@ export default class ReactChipInput extends React.Component<any> {
      * This index will help us to remove the chip actually after the same. */
     exitingIndex: -1
   };
-  constructor(props: Readonly<any>) {
+  constructor(props: Readonly<Props>) {
     super(props);
     this.formControlRef = React.createRef();
   }
@@ -46,7 +59,7 @@ export default class ReactChipInput extends React.Component<any> {
     this.formControlRef.current.focus();
   };
   /**This is needed, as chips array will get changed frequently. */
-  componentDidUpdate(prevProps: Readonly<any>) {
+  componentDidUpdate(prevProps: Readonly<Props>) {
     if (prevProps.chips.length !== this.props.chips.length) {
       this.formControlRef.current.value = '';
     }
@@ -96,7 +109,7 @@ export default class ReactChipInput extends React.Component<any> {
               <FormControl
                 ref={this.formControlRef}
                 name="chipInput"
-                {...this.props}
+                onFocus={this.props.onFocus}
                 disabled={this.props.disabled}
                 placeholder={this.props.placeholder}
                 aria-label="Chip Input"
