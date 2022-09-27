@@ -17,6 +17,8 @@ export type Props = {
   /**Extra classes */
   classes: string;
 onFocus:Function;
+onBlur:Function;
+
   placeholder: string;
 disabled:boolean;
   /**Emits value */
@@ -116,7 +118,7 @@ export default class ReactChipInput extends React.Component<Props> {
                   ' '
                 )}
                 onFocus={() => {this.setState({ focused: true });this.props.onFocus();}}
-                onBlur={() => this.setState({ focused: false })}
+                onBlur={() => {this.setState({ focused: false });this.props.onBlur();}}
               />
             </Form>
           </Col>
