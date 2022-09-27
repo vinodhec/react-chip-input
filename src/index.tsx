@@ -118,7 +118,7 @@ export default class ReactChipInput extends React.Component<Props> {
                   ' '
                 )}
                 onFocus={() => {this.setState({ focused: true });this.props.onFocus();}}
-                onBlur={() => {this.setState({ focused: false });this.props.onBlur();}}
+                onBlur={() => {this.setState({ focused: false });this.props.onBlur(this.formControlRef.current.value);}}
               />
             </Form>
           </Col>
